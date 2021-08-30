@@ -1,0 +1,18 @@
+<p id='notice'><%= notice %></p>
+
+<%= turbo_frame_tag 'project' do %>
+  <strong>Title</strong> <%= @project.title %> <sup><%= link_to 'Edit', edit_project_path(@project) %></sup>
+<% end %>
+  
+<hr />
+
+<h4>Phases</h4>
+<div id='phases'>
+  <%= render @project.phases %>
+</div>
+
+<hr />
+
+<%= turbo_frame_tag 'phase' do %>
+  <%= link_to 'Add Phase', new_project_phase_path(@project) %>
+<% end %>
